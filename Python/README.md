@@ -10,6 +10,8 @@
 - https://marshmallow.readthedocs.io/en/stable/index.html
 - load_only : serialization에서 제외할 항목 설정. 즉 아래와 같이 코드를 작성하는 경우 serialization시 id와 b 값만 반환됨. API 결과로 1) 노출되서는 안되는 경우, 2) 사용되지 않는데 불필요하게 데이터 양이 늘어나 속도 이슈가 생기는 경우 사용할 수 있음. 
 ```python
+from marshmallow_sqlalchemy import ModelSchema
+
 class AModel(db.Model):
   ...
   id = db.Column(db.Integer, primary_key=True)
