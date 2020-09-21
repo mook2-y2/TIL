@@ -1,0 +1,15 @@
+# 리액트를 다루는 기술 _ 김민준
+- MVC, MVW 등인 프레임워크와 달리, 오직 V만 신경 쓰는 라이브러리이다. 프레임워크가 아니라 라이브러리다. 즉 Ajax, 데이터 모델링, 라우팅 등의 기능은 내장하고 있지 않다. → axios, fetch, redux, MobX, react-router 등과 함께 사용해야함. (혹은 Backbone.js, AngularJS 등과 혼용도 가능)
+- 리액트는 데이터가 변할 때마다 기존 뷰를 날려버리고 처음부터 새로 렌더링한다. 리액트 컴포넌트가 최초로 실행한 "초기 렌더링"과 컴포넌트의 데이터 변경으로 다시 실행되는 "리렌더링"
+    - 초기 렌더링 : HTML 코드 생성 → 특정 DOM에 해당 내용 주입 → 이벤트 적용
+    - 리렌더링 : 변경된 데이터를 가지고 render 함수 다시 호출 → 그대로 DOM에 반영하는 것이 아니라 이전 render시와 비교하여 (javascript 사용) 차이 부분만 업데이트
+- 리액트의 주요 특징. Virtual DOM을 사용
+    - DOM (Document Object Model) : 객체로 문서 구조를 표현하는 방법. XML, HTML로 작성.
+    - DOM의 치명적인 문제는 동적 UI에 최적화되어 있지 않다. 복잡한 HTML(ex: 수백~수천개의 div)인 경우 변화(css 적용, 렌더)를 주는 것에 성능 이슈가 발생할 수 있다. → Virtual DOM 방식을 통해 DOM 업데이트를 추상화하여 DOM 처리 횟수를 최소화한다.
+    - Virtual DOM : DOM을 추상화한 java script 객체를 사용. 데이터 변경시 Virtual DOM을 리렌더링하여 이전 Virtual DOM과 비교 후 바뀐 부분만 실제 DOM에 적용.
+    - 데이터 변경이 적은 단순 정적 페이지는 React의 위력과 적합하지 않음.
+- Node.js 와 npm
+    - Node.js : 2009년 출시된 크롬 V8 자바스크립트 엔진으로 빌드한 자바스크립트 런타임. 이걸 이용해 웹 브라우저 환경이 아닌 곳에서도 자바스크립트를 사용하여 연산할 수 있음.
+    - npm : Node.js 패키지 매니저 도구. (pip 같은 것)
+    - yarn : npm 같은 또 다른 패키지 매니저 도구. npm보다 더 빠르며 효율적인 캐시 시스템과 기타 부가 기능을 제공
+- react 관련 vs 익스텐션 : ESLint, Reactjs Code Snippets, Prettier,
